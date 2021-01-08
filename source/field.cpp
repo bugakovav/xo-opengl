@@ -79,7 +79,7 @@ void draw_circle_win(float x, float y, float r, u_int amount_segments)
 
 	for (int i = 0; i < amount_segments; i++)
 	{
-		double angle = 2.0 * 3.1415926 * i / (double)amount_segments;
+		double angle = 6.2831852 * i / (double)amount_segments;
 
 		double dx = (double)r * cos(angle);
 		double dy = (double)r * sin(angle);
