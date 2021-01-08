@@ -58,13 +58,15 @@ void draw_cell()
 
 void draw_cross_win(u_int i, u_int j)
 {
+	int tmp_scale = scale - 5;
+
 	glColor3f(255, 128, 0);
 	glLineWidth(2);
 	glBegin(GL_LINES);
 	glVertex2i(j * scale + 5, i * scale + 5);
-	glVertex2i(j * scale + scale - 5, i * scale + scale - 5);
-	glVertex2i(j * scale + 5, i * scale + scale - 5);
-	glVertex2i(j * scale + scale - 5, i * scale + 5);
+	glVertex2i(j * scale + tmp_scale, i * scale + tmp_scale);
+	glVertex2i(j * scale + 5, i * scale + tmp_scale);
+	glVertex2i(j * scale + tmp_scale, i * scale + 5);
 	glEnd();
 }
 
