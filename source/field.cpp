@@ -21,6 +21,11 @@ void draw_field()
 
 void draw_cell()
 {
+	
+	float r = (scale / 2) - 5; 
+
+	float half_scale = (float)scale / 2;
+
 	for (u_int i = 0; i < rows; i++)
 	{
 		for (u_int j = 0; j < cols; j++)
@@ -31,13 +36,13 @@ void draw_cell()
 					draw_cross(i, j);
 
 				if (field[i][j].value == 1)
-					draw_circle((j * scale + (float)(scale / 2)) - 1, (i * scale + (float)(scale / 2)), (scale / 2) - 5, 2048);
+					draw_circle((j * scale + half_scale) - 1, (i * scale + half_scale), r, 2048);
 
 				if (field[i][j].value == 2)
 					draw_cross_win(i, j);
 
 				if (field[i][j].value == 3)
-					draw_circle_win((j * scale + (float)(scale / 2)) - 1, (i * scale + (float)(scale / 2)), (scale / 2) - 5, 2048);
+					draw_circle_win((j * scale + half_scale) - 1, (i * scale + half_scale), r, 2048);
 			}
 		}
 	}
