@@ -32,17 +32,25 @@ void draw_cell()
 		{
 			if (field[i][j].value != -1)
 			{
-				if (field[i][j].value == 0)
+				if (field[i][j].value == 0) {
 					draw_cross(i, j);
+					continue;
+				}
 
-				if (field[i][j].value == 1)
+				if (field[i][j].value == 1) {
 					draw_circle((j * scale + half_scale) - 1, (i * scale + half_scale), r, 2048);
+					continue;
+				}
 
-				if (field[i][j].value == 2)
+				if (field[i][j].value == 2) {
 					draw_cross_win(i, j);
+					continue;
+				}
 
-				if (field[i][j].value == 3)
+				if (field[i][j].value == 3) {
 					draw_circle_win((j * scale + half_scale) - 1, (i * scale + half_scale), r, 2048);
+					continue;
+				}
 			}
 		}
 	}
