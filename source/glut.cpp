@@ -92,7 +92,12 @@ void mouse_pressed(int button, int state, int x, int y)
 			if (flag1 and flag2)
 				add_pot(lrow, lcol);
 
-			flag1 = 1; flag2 = 1;
+		}
+
+		__asm
+		{
+			mov	byte ptr[flag1], 1
+			mov	byte ptr[flag2], 1
 		}
 
 		if (game_mode == 0 and player == 0 and !win)
