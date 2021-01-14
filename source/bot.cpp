@@ -63,9 +63,11 @@ void choose_move()
 
 	int random_value = rand() % (count + 1);
 
-	field[pots[count_pots - 1 - random_value].y][pots[count_pots - 1 - random_value].x].value = player;
-	bot_last_x = pots[count_pots - 1 - random_value].x;
-	bot_last_y = pots[count_pots - 1 - random_value].y;
+	int coord = count_pots - 1 - random_value;
+
+	field[pots[coord].y][pots[coord].x].value = player;
+	bot_last_x = pots[coord].x;
+	bot_last_y = pots[coord].y;
 
 	for (int i = 0; i < count_pots; i++)
 		pots[i].pot = 0;
