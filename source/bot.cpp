@@ -49,7 +49,9 @@ void find_enemy_move()
 
 void choose_move()
 {
-	sort();
+	//sort();
+
+	qsort(pots, 0, count_pots - 1);
 
 	int max = pots[count_pots - 1].pot, count = 0, index = count_pots - 2;
 
@@ -86,4 +88,38 @@ void sort()
 			pots[i + 1] = tmp;
 		}
 	}
+}
+
+void qsort(cell* numbers, int left, int right)
+{
+	cell change;
+	cell pivot;
+	int l_hold = left;
+	int r_hold = right;
+	int pivot2;
+	pivot = numbers[left];
+	while (left < right)
+	{
+		while ((numbers[right].pot >= pivot.pot) && (left < right))
+			right--;
+		if (left != right)
+		{
+			numbers[left] = numbers[right];
+			left++;
+		}
+		while ((numbers[left].pot <= pivot.pot) && (left < right))
+			left++;
+		if (left != right)
+		{
+			numbers[right] = numbers[left];
+		}
+	}
+	numbers[left] = pivot;
+	pivot2 = left;
+	left = l_hold;
+	right = r_hold;
+	if (left < pivot2)
+		qsort(numbers, left, pivot2 - 1);
+	if (right > pivot2)
+		qsort(numbers, pivot2 + 1, right);
 }

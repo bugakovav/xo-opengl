@@ -8,5 +8,6 @@ void bot_();
 void find_move();
 void find_enemy_move();
 void sort();
+void qsort(cell* numbers, int left, int right);
 void choose_move();
 /*---------------------------*/
