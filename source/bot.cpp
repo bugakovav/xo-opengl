@@ -3,11 +3,14 @@
 
 void first_bot_move()
 {
-	field[rows / 2][cols / 2].x = cols / 2;
-	field[rows / 2][cols / 2].y = rows / 2;
-	field[rows / 2][cols / 2].value = player;
-	bot_last_x = cols / 2;
-	bot_last_y = rows / 2;
+	int lrow = rows / 2;
+	int lcol = cols / 2;
+
+	field[lrow][lcol].x = lcol;
+	field[lrow][lcol].y = lrow;
+	field[lrow][lcol].value = player;
+	bot_last_x = lcol;
+	bot_last_y = lrow;
 
 	player = !player;
 	count_moves++;
